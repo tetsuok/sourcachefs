@@ -81,8 +81,6 @@ find_in_path() {
 get_go_dep() {
     local dependency="${1}"; shift
 
-    local module="${dependency##*/}"
-
     mkdir -p "${DEPSDIR}"
     info "Getting ${dependency}"
     GOPATH="${DEPSDIR}" "${GOROOT}/bin/go" get -t "${dependency}" \
